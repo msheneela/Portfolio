@@ -1,0 +1,285 @@
+<div class="container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <div class="avatar">MS</div>
+      <h2>Meenakshi</h2>
+      <p>CSE Student</p>
+    </div>
+
+    <button (click)="changeTab('dashboard')">🏠 Dashboard</button>
+
+    <button (click)="changeTab('about')">👤 About</button>
+
+    <button (click)="changeTab('education')">🎓 Education</button>
+
+    <button (click)="changeTab('skills')">💻 Skills</button>
+
+    <button (click)="changeTab('internship')">💼 Internship</button>
+
+    <button (click)="changeTab('projects')">📂 Projects</button>
+
+    <button (click)="changeTab('resume')">📄 Resume</button>
+
+    <button (click)="changeTab('contact')">📞 Contact</button>
+
+  </aside>
+
+  <!-- Main Content -->
+
+  <main class="content">
+
+    <!-- Dashboard -->
+
+    <section *ngIf="activeTab=='dashboard'">
+
+      <h1>Welcome 👋</h1>
+
+      <h2>Meenakshi Sheneela T R</h2>
+
+      <h3>B.Tech Computer Science Engineering Student</h3>
+
+      <p>
+        SRM Institute of Science and Technology
+      </p>
+
+      <p>
+        Second Year • Graduating 2029
+      </p>
+
+      <div class="stats">
+
+        <div class="card">
+          <h2>09</h2>
+          <p>Skills</p>
+        </div>
+
+        <div class="card">
+          <h2>04</h2>
+          <p>Projects</p>
+        </div>
+
+        <div class="card">
+          <h2>01</h2>
+          <p>Internship</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section *ngIf="activeTab=='about'">
+
+      <h1>About Me</h1>
+
+      <p>
+
+        I am a Second-year B.Tech Computer Science Engineering student at
+        SRM Institute of Science and Technology.
+
+      </p>
+
+      <p>
+
+        I enjoy learning modern web technologies, solving programming
+        problems and developing responsive web applications.
+
+      </p>
+
+      <p>
+
+        Currently, I am learning Angular during my internship at
+        Micro Labs Limited.
+
+      </p>
+
+    </section>
+
+    <!-- Education -->
+
+    <section *ngIf="activeTab=='education'">
+
+      <h1>Education</h1>
+
+      <div class="card">
+        <h2>B.Tech Computer Science Engineering (Core)</h2>
+
+<p>SRM Institute of Science and Technology</p>
+
+<p>2025 - 2029</p>
+
+<p>Current Year: Second Year</p>
+
+</div>
+
+</section>
+
+<!-- Skills -->
+
+<section *ngIf="activeTab=='skills'">
+
+<h1>Technical Skills</h1>
+
+<div class="skills">
+
+<div
+
+class="skill-card" *ngFor="let skill of skills">
+
+<h3>{{skill.name}}</h3>
+
+<div class="progress">
+
+<div
+
+class="fill" [style.width.%]="skill.level">
+
+</div>
+
+</div>
+
+<p>{{skill.level}}%</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Internship -->
+
+<section *ngIf="activeTab=='internship'">
+
+<h1>Internship</h1>
+
+<div class="card">
+
+<h2>Micro Labs Limited</h2>
+
+<h3>Corporate IT</h3>
+
+<p>Duration: 10 Days</p>
+
+<p>
+
+Learning Front-End Development using Angular, HTML, CSS, JavaScript and TypeScript.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Projects -->
+
+<section *ngIf="activeTab=='projects'">
+
+<h1>Projects</h1>
+
+<div class="projects">
+
+<div
+
+class="project" *ngFor="let project of projects">
+
+<h2>{{project.title}}</h2>
+
+<p><b>Technology:</b> {{project.tech}}</p>
+
+<p>{{project.description}}</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Resume -->
+
+<section *ngIf="activeTab=='resume'">
+
+<h1>Resume</h1>
+
+<p>
+
+You can view or download my latest resume.
+
+</p>
+
+<a
+
+href="/assets/Resume.pdf" target="_blank">
+
+<button>
+
+View Resume
+
+</button>
+
+</a>
+
+<a
+
+href="/assets/Resume.pdf" download>
+
+<button>
+
+Download Resume
+
+</button>
+
+</a>
+
+</section>
+
+<!-- Contact -->
+
+<section *ngIf="activeTab=='contact'">
+
+<h1>Contact</h1>
+
+<div class="card">
+
+  <p>
+  <strong>Email:</strong>
+  <a href="mailto:msheneela.tr@gmail.com?subject=Portfolio%20Inquiry">
+  msheneela.tr@gmail.com
+</a>
+</p>
+
+<p>
+  <strong>LinkedIn:</strong>
+  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID"
+     target="_blank"
+     rel="noopener noreferrer">
+    LinkedIn Profile
+  </a>
+</p>
+
+<h3>College</h3>
+
+<p>
+
+SRM Institute of Science and Technology
+
+</p>
+
+<h3>Career Goal</h3>
+
+<p>
+
+Aspiring Front-End Developer and Software Engineer.
+
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
