@@ -12,6 +12,16 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+// Redirect legacy `/asset/*` requests to the standard `/assets/*` path
+// This makes older links like `/asset/Resume.pdf` continue to work.
+app.use((req, res, next) => {
+  if (req.path && req.path.startsWith('/asset/')) {
+    const newPath = req.path.replace(/^\/asset\//, '/assets/');
+    return res.redirect(301, newPath);
+  }
+  next();
+});
+
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
